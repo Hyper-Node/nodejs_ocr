@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "${workspaceRoot}/app.js",
+        "args": [
+            //"--inputfiles",  
+            //"test\\fixtures\\html\\2005\\0003.html.utf8.html"
+            "--inputdir",
+            //"test\\fixtures\\html\\postprocessed-html-neu-171108\\2014-2"     
+            //"\\media\\sf_firmprofiles\\many_years_firmprofiles\\"
+            //"\\media\\sf_firmprofiles\\1956\\"
+            //"\/media",
+            "\/media\/sf_firmprofiles\/many_years_firmprofiles\/short\/twoprof"
+        ]
+    }],
+    "compounds": []
+}

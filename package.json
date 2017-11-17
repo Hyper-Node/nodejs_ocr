@@ -1,0 +1,23 @@
+{
+  "name": "nodejs_ocr",
+  "version": "1.0.0",
+  "description": "Testing ocr functionies by controlling ocr-engines with nodejs. ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "ocr"
+  ],
+  "author": "jstegmue",
+  "license": "",
+  "dependencies": {
+    "async": "^2.6.0",
+    "commander": "^2.11.0",
+    "dotenv": "^4.0.0",
+    "mkdirp": "^0.5.1",
+    "node-tesseract": "^0.2.7",
+    "path": "^0.12.7"
+  }
+}
