@@ -27,10 +27,10 @@ There is also hard dependency on the ocr-tools used within this tool.
 At the moment tesseract is used. Others will follow, probably ocropus next.
 
 
-## Commands to use akf-cdparser
+## Commands to use nodejs_ocr
   Usage: $node app.js [options]
 
-  Options:
+    Options:
     -o, --outputdir <dir>     Output directory
     -i, --inputdir <dir>      Input directory with html files
     -f, --inputfiles <files>  Input files
