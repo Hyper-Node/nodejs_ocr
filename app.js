@@ -14,8 +14,6 @@ const tesseract_parser = require('./lib/tesseract_parser');
 Program
     .option('-o, --outputdir <dir>', 'Output directory', './output')
     .option('-i, --inputdir <dir>','Input directory with html files')
-    .option('-p, --print', 'Print to STDOUT', false)
-    .option('-n, --parallel <num>', 'Parallel conversions', parseInt, 5)
     .option('-f, --inputfiles <files>','Input files ' ) 
     .parse(process.argv); 
 
