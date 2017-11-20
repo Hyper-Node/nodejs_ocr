@@ -1,0 +1,3 @@
+[submodule "node_modules_custom/node-tesseract"]
+	path = node_modules_custom/node-tesseract
+	url = https://github.com/Hyper-Node/node-tesseract
