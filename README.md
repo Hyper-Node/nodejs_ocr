@@ -20,6 +20,7 @@ In command line, go to project folder and type:
     npm install
 
 Also initialize submodules, since tesseract-ocr is an independent git repository:
+
     git submodule update --init --recursive
 
 Then in node_modules_custom, initialize npm in subdirectories:
