@@ -24,6 +24,7 @@ Also initialize submodules, since tesseract-ocr is an independent git repository
     git submodule update --init --recursive
 
 Then in node_modules_custom, initialize npm in subdirectories:
+
     npm install (could be that this is already triggered in root directory, when you type npm install after submodule update)
 
 The project was written in Visual Studio Code, so if you are a developer it's recomended to use it
