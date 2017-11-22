@@ -119,7 +119,7 @@ function parseSelectedFilesAsync(selectedFiles,doLSE){
         */
         console.log("------------------------------------------------------------");
         console.log("Starting to parse file ",selectedFile);
-        tesseract_parser.parseFile(selectedFile,outname,failed,parseOneFileAsync);
+        tesseract_parser.parseFile(selectedFile,outname,outputDir,failed,parseOneFileAsync);
     }
 
     function end(){
