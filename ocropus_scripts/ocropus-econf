@@ -39,6 +39,7 @@ parser.add_argument("-e","--perfile",default=None,help="output per-file errors t
 parser.add_argument("-C","--context",type=int,default=0,help="context for confusion matrix, default: %(default)s")
 parser.add_argument("-Q","--parallel",type=int,default=multiprocessing.cpu_count())
 args = parser.parse_args()
+print("args are: ",args)
 args.files = ocrolib.glob_all(args.files)
 
 if not ".gt." in args.files[0]:
