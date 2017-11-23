@@ -8,6 +8,7 @@ import sys
 import os
 import os.path
 import multiprocessing
+import json
 
 import ocrolib
 from ocrolib import edist
@@ -36,7 +37,8 @@ if not ".gt." in args.files[0]:
 def process1(fname):
     # fgt = ocrolib.allsplitext(fname)[0]+args.gtextension
     gt = ocrolib.project_text(ocrolib.read_text(fname),kind=args.kind)
-    ftxt = ocrolib.allsplitext(fname)[0]+args.extension
+    # ftxt = ocrolib.allsplitext(fname)[0]+args.extension
+    ftxt = fname.replace(".gt","")
     missing = 0
     if os.path.exists(ftxt):
         txt = ocrolib.project_text(ocrolib.read_text(ftxt),kind=args.kind)
@@ -58,11 +60,19 @@ for fname,e,t,m in sorted(outputs):
     total += t
     missing += m
 
+errorrate = -1
+errmissing = -1 
+
 if not args.erroronly:
     print("errors    %8d"%errs)
     print("missing   %8d"%missing)
     print("total     %8d"%total)
-    print("err       %8.3f %%"%(errs*100.0/total))
-    print("errnomiss %8.3f %%"%((errs-missing)*100.0/total))
+    errorrate = (errs*100.0/total)
+    print("err       %8.3f %%"%errorrate)
+    errmissing = ((errs-missing)*100.0/total) 
+    print("errnomiss %8.3f %%"%errmissing)
 
-print(errs * 1.0 / total)
+errorrateshort = errs * 1.0 / total
+print("errshort       %8.3f %%"%errorrateshort)
+
+print(json.dumps({"JSONOBJ":"errs-results","errors": errs, "missing": missing, "total": total,"errorrate":errorrate,"errorsmissing":errmissing,"errorrateshort":errorrateshort}, sort_keys=False))
