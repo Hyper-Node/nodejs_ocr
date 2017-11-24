@@ -237,6 +237,7 @@ def process1(job):
         ocrolib.write_image_gray(args.output+"/%04d.nrm.png"%i,flat)
     else:
         base,_ = ocrolib.allsplitext(fname)
+        print("base is ",base)
         ocrolib.write_image_binary(base+".bin.png",bin)
         ocrolib.write_image_gray(base+".nrm.png",flat)
 

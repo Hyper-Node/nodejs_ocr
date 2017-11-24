@@ -113,8 +113,11 @@ for arg in args.files:
             last_coords = (x0,y0)
 
             # get the text for the line itself
-
+            print("base is:",base)
+            print("id is:",id)
             lbase = "%s/%06x"%(base,id)
+            pcheck = lbase+".txt"
+            print("check for pch",pcheck)
 
             if not os.path.exists(lbase+".txt"):
                 E("note: line %s produced no output (it may not have contained text)"%(lbase+".bin.png"))

@@ -10,6 +10,7 @@ const async       = require('async');
 
 //Own packages 
 const tesseract_parser = require('./lib/tesseract_parser');
+const ocropus_handler  = require('./lib/ocropus_handler');
 
 Program
     .option('-o, --outputdir <dir>', 'Output directory', './output')
@@ -119,7 +120,24 @@ function parseSelectedFilesAsync(selectedFiles,doLSE){
         */
         console.log("------------------------------------------------------------");
         console.log("Starting to parse file ",selectedFile);
-        tesseract_parser.parseFile(selectedFile,outname,outputDir,failed,parseOneFileAsync);
+        //tesseract_parser.parseFile(selectedFile,outname,outputDir,failed,parseOneFileAsync);
+        /*
+        ocropus_handler.parse_file_binarize(selectedFile,outname,outputDir,failed,function(){
+            ocropus_handler.parse_file_gpaseg(selectedFile,outname,outputDir,failed,function(){
+                ocropus_handler.parse_file_rpred(selectedFile,outname,outputDir,failed,function(){
+                    ocropus_handler.parse_file_hocr(selectedFile,outname,outputDir,failed,function(){                  
+                        parseOneFileAsync(); //Call the next file 
+                    });
+                });
+            });
+        });
+        */
+
+        ocropus_handler.parse_file_rpred(selectedFile,outname,outputDir,failed,function(){
+            ocropus_handler.parse_file_hocr(selectedFile,outname,outputDir,failed,function(){                  
+                parseOneFileAsync(); //Call the next file 
+            });
+        });
     }
 
     function end(){
