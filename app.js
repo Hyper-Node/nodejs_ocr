@@ -134,9 +134,11 @@ function parseSelectedFilesAsync(selectedFiles,doLSE){
         */
 
         ocropus_handler.parse_file_rpred(selectedFile,outname,outputDir,failed,function(){
+           /*
             ocropus_handler.parse_file_hocr(selectedFile,outname,outputDir,failed,function(){                  
                 parseOneFileAsync(); //Call the next file 
             });
+            */
         });
     }
 
